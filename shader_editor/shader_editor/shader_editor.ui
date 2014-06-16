@@ -1,0 +1,2082 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>shader_editorClass</class>
+ <widget class="QMainWindow" name="shader_editorClass">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>874</width>
+    <height>1045</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>0</width>
+    <height>0</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>shader_editor</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <property name="margin">
+     <number>0</number>
+    </property>
+    <item>
+     <widget class="QWidget" name="widget" native="true">
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <property name="margin">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="QTabWidget" name="tabWidget">
+         <property name="currentIndex">
+          <number>0</number>
+         </property>
+         <widget class="QWidget" name="mainTab_ObjectView">
+          <attribute name="title">
+           <string>Pohled na objekt</string>
+          </attribute>
+          <layout class="QGridLayout" name="osgTabLayout">
+           <property name="margin">
+            <number>0</number>
+           </property>
+           <item row="0" column="0">
+            <widget class="display_viewer" name="osgGLWidget" native="true"/>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="mainTab_ShaderEditor">
+          <attribute name="title">
+           <string>Shadery</string>
+          </attribute>
+          <layout class="QGridLayout" name="gridLayout">
+           <property name="leftMargin">
+            <number>0</number>
+           </property>
+           <property name="rightMargin">
+            <number>0</number>
+           </property>
+           <property name="bottomMargin">
+            <number>0</number>
+           </property>
+           <item row="0" column="2">
+            <widget class="QTabWidget" name="ShaderTab">
+             <property name="font">
+              <font>
+               <family>MS Shell Dlg 2</family>
+               <kerning>false</kerning>
+              </font>
+             </property>
+             <property name="tabPosition">
+              <enum>QTabWidget::North</enum>
+             </property>
+             <property name="currentIndex">
+              <number>4</number>
+             </property>
+             <widget class="QWidget" name="vertexShaderTab">
+              <attribute name="title">
+               <string>Vertex Shader</string>
+              </attribute>
+              <layout class="QGridLayout" name="gridLayout_2">
+               <item row="0" column="0">
+                <widget class="QPlainTextEdit" name="textEdit_VS">
+                 <property name="font">
+                  <font>
+                   <family>Courier</family>
+                   <kerning>false</kerning>
+                  </font>
+                 </property>
+                 <property name="lineWrapMode">
+                  <enum>QPlainTextEdit::NoWrap</enum>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+             <widget class="QWidget" name="tessControlShaderTab">
+              <property name="font">
+               <font>
+                <family>Courier</family>
+                <kerning>false</kerning>
+               </font>
+              </property>
+              <attribute name="title">
+               <string>Tessellation Control Shader</string>
+              </attribute>
+              <layout class="QGridLayout" name="gridLayout_3">
+               <item row="0" column="0">
+                <widget class="QPlainTextEdit" name="textEdit_TCS">
+                 <property name="lineWrapMode">
+                  <enum>QPlainTextEdit::NoWrap</enum>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+             <widget class="QWidget" name="tessEvalShaderTab">
+              <attribute name="title">
+               <string>Tessellation Evaluation Shader</string>
+              </attribute>
+              <layout class="QGridLayout" name="gridLayout_4">
+               <item row="0" column="0">
+                <widget class="QPlainTextEdit" name="textEdit_TES">
+                 <property name="font">
+                  <font>
+                   <family>Courier</family>
+                   <kerning>false</kerning>
+                  </font>
+                 </property>
+                 <property name="lineWrapMode">
+                  <enum>QPlainTextEdit::NoWrap</enum>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+             <widget class="QWidget" name="GeomShaderTab">
+              <attribute name="title">
+               <string>Geometry Shader</string>
+              </attribute>
+              <layout class="QGridLayout" name="gridLayout_5">
+               <item row="0" column="0">
+                <widget class="QPlainTextEdit" name="textEdit_GS">
+                 <property name="font">
+                  <font>
+                   <family>Courier</family>
+                   <kerning>false</kerning>
+                  </font>
+                 </property>
+                 <property name="lineWrapMode">
+                  <enum>QPlainTextEdit::NoWrap</enum>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+             <widget class="QWidget" name="FragShaderTab">
+              <attribute name="title">
+               <string>Fragment Shader</string>
+              </attribute>
+              <layout class="QGridLayout" name="gridLayout_6">
+               <item row="0" column="0">
+                <widget class="QPlainTextEdit" name="textEdit_FS">
+                 <property name="font">
+                  <font>
+                   <family>Courier</family>
+                  </font>
+                 </property>
+                 <property name="lineWrapMode">
+                  <enum>QPlainTextEdit::NoWrap</enum>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </widget>
+           </item>
+           <item row="0" column="0">
+            <widget class="QWidget" name="shaderProgramWidget" native="true">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>250</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="baseSize">
+              <size>
+               <width>200</width>
+               <height>0</height>
+              </size>
+             </property>
+             <layout class="QVBoxLayout" name="verticalLayout_7">
+              <property name="spacing">
+               <number>0</number>
+              </property>
+              <property name="margin">
+               <number>0</number>
+              </property>
+              <item>
+               <layout class="QVBoxLayout" name="verticalLayout_6">
+                <property name="spacing">
+                 <number>0</number>
+                </property>
+                <property name="margin">
+                 <number>0</number>
+                </property>
+                <item>
+                 <layout class="QHBoxLayout" name="horizontalLayout_5">
+                  <item>
+                   <spacer name="horizontalSpacer">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>40</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                  <item>
+                   <widget class="QPushButton" name="uniformRegion_ShowHide">
+                    <property name="enabled">
+                     <bool>true</bool>
+                    </property>
+                    <property name="text">
+                     <string>Uniforms</string>
+                    </property>
+                    <property name="checkable">
+                     <bool>true</bool>
+                    </property>
+                    <property name="checked">
+                     <bool>true</bool>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QPushButton" name="bindingsRegion_ShowHide">
+                    <property name="text">
+                     <string>Bindings</string>
+                    </property>
+                    <property name="checkable">
+                     <bool>true</bool>
+                    </property>
+                    <property name="checked">
+                     <bool>true</bool>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item>
+                 <layout class="QHBoxLayout" name="horizontalLayout_3">
+                  <item>
+                   <widget class="QPushButton" name="createShaderProgram">
+                    <property name="text">
+                     <string>Nový sh. program</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QPushButton" name="hideShaderProgramField">
+                    <property name="text">
+                     <string>Schovat</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item>
+                 <widget class="QTableWidget" name="listOfShaderPrograms">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="baseSize">
+                   <size>
+                    <width>100</width>
+                    <height>100</height>
+                   </size>
+                  </property>
+                  <property name="rowCount">
+                   <number>0</number>
+                  </property>
+                  <property name="columnCount">
+                   <number>3</number>
+                  </property>
+                  <attribute name="horizontalHeaderVisible">
+                   <bool>false</bool>
+                  </attribute>
+                  <attribute name="horizontalHeaderDefaultSectionSize">
+                   <number>80</number>
+                  </attribute>
+                  <attribute name="horizontalHeaderHighlightSections">
+                   <bool>false</bool>
+                  </attribute>
+                  <attribute name="horizontalHeaderStretchLastSection">
+                   <bool>true</bool>
+                  </attribute>
+                  <attribute name="verticalHeaderVisible">
+                   <bool>false</bool>
+                  </attribute>
+                  <attribute name="verticalHeaderStretchLastSection">
+                   <bool>false</bool>
+                  </attribute>
+                  <column>
+                   <property name="text">
+                    <string>Jméno</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>Tes/geom</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>P. užití</string>
+                   </property>
+                  </column>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QCheckBox" name="useTessShader">
+                  <property name="text">
+                   <string>Tessellation Control and Evaluation Shader</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QCheckBox" name="useGeometryShader">
+                  <property name="text">
+                   <string>Geometry Shader</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <layout class="QGridLayout" name="gridLayout_14">
+                  <item row="0" column="0">
+                   <widget class="QPushButton" name="saveProgram">
+                    <property name="text">
+                     <string>Uložit program</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="1">
+                   <widget class="QPushButton" name="loadProgram">
+                    <property name="text">
+                     <string>Načíst program</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item>
+                 <widget class="QWidget" name="uniformRegion" native="true">
+                  <property name="minimumSize">
+                   <size>
+                    <width>0</width>
+                    <height>0</height>
+                   </size>
+                  </property>
+                  <layout class="QVBoxLayout" name="verticalLayout_8">
+                   <property name="spacing">
+                    <number>0</number>
+                   </property>
+                   <property name="margin">
+                    <number>0</number>
+                   </property>
+                   <item>
+                    <layout class="QHBoxLayout" name="horizontalLayout_6">
+                     <property name="margin">
+                      <number>3</number>
+                     </property>
+                     <item>
+                      <widget class="QPushButton" name="getProgramUniforms">
+                       <property name="text">
+                        <string>Zjistit uniformy programu</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QPushButton" name="addUniformsToStateSet">
+                       <property name="text">
+                        <string>Přiřadit uniform(y)
+aktuálnímu statesetu</string>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </item>
+                   <item>
+                    <widget class="QTableWidget" name="listOfActualProgramUniforms">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Fixed" vsizetype="Expanding">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <attribute name="horizontalHeaderStretchLastSection">
+                      <bool>true</bool>
+                     </attribute>
+                     <attribute name="verticalHeaderStretchLastSection">
+                      <bool>true</bool>
+                     </attribute>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QWidget" name="bindingRegion" native="true">
+                  <property name="minimumSize">
+                   <size>
+                    <width>0</width>
+                    <height>10</height>
+                   </size>
+                  </property>
+                  <layout class="QVBoxLayout" name="verticalLayout_9">
+                   <property name="spacing">
+                    <number>0</number>
+                   </property>
+                   <property name="margin">
+                    <number>0</number>
+                   </property>
+                   <item>
+                    <layout class="QHBoxLayout" name="horizontalLayout_7">
+                     <item>
+                      <spacer name="horizontalSpacer_2">
+                       <property name="orientation">
+                        <enum>Qt::Horizontal</enum>
+                       </property>
+                       <property name="sizeHint" stdset="0">
+                        <size>
+                         <width>40</width>
+                         <height>20</height>
+                        </size>
+                       </property>
+                      </spacer>
+                     </item>
+                     <item>
+                      <widget class="QPushButton" name="updateBindings">
+                       <property name="text">
+                        <string>Aktualizovat změny v Bindings</string>
+                       </property>
+                       <property name="icon">
+                        <iconset>
+                         <normaloff>C:/Users/Martin/.designer/backup/refresh_b.png</normaloff>C:/Users/Martin/.designer/backup/refresh_b.png</iconset>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QToolButton" name="addVABinding">
+                       <property name="text">
+                        <string>...</string>
+                       </property>
+                       <property name="icon">
+                        <iconset>
+                         <normaloff>C:/Users/Martin/.designer/backup/plus_g.png</normaloff>C:/Users/Martin/.designer/backup/plus_g.png</iconset>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QToolButton" name="removeVABinding">
+                       <property name="text">
+                        <string>...</string>
+                       </property>
+                       <property name="icon">
+                        <iconset>
+                         <normaloff>C:/Users/Martin/.designer/backup/minus_r.png</normaloff>C:/Users/Martin/.designer/backup/minus_r.png</iconset>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </item>
+                   <item>
+                    <widget class="QTableWidget" name="bindingListTable">
+                     <property name="columnCount">
+                      <number>2</number>
+                     </property>
+                     <attribute name="horizontalHeaderStretchLastSection">
+                      <bool>true</bool>
+                     </attribute>
+                     <attribute name="verticalHeaderVisible">
+                      <bool>false</bool>
+                     </attribute>
+                     <attribute name="verticalHeaderStretchLastSection">
+                      <bool>false</bool>
+                     </attribute>
+                     <column/>
+                     <column/>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+                <item>
+                 <spacer name="verticalSpacer">
+                  <property name="orientation">
+                   <enum>Qt::Vertical</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>20</width>
+                    <height>40</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item>
+                 <layout class="QHBoxLayout" name="horizontalLayout_4">
+                  <item>
+                   <widget class="QPushButton" name="shaderTab_saveShaderChanges">
+                    <property name="text">
+                     <string>Uložit změny v shaderu</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QPushButton" name="shaderTab_resetShaderChanges">
+                    <property name="text">
+                     <string>Znovu načíst</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QPushButton" name="showShaderProgramField">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>30</width>
+               <height>16777215</height>
+              </size>
+             </property>
+             <property name="layoutDirection">
+              <enum>Qt::LeftToRight</enum>
+             </property>
+             <property name="text">
+              <string>Z
+o
+b
+r
+a
+z
+i
+t
+ 
+s
+h
+a
+d
+e
+r
+ 
+p
+r
+o
+g
+r
+a
+m
+y</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>874</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuSoubor">
+    <property name="title">
+     <string>Soubor</string>
+    </property>
+    <addaction name="actionLoadObject"/>
+    <addaction name="actionLoadObjectOptimalizer"/>
+    <addaction name="separator"/>
+    <addaction name="actionSaveObject"/>
+   </widget>
+   <widget class="QMenu" name="menuOSG">
+    <property name="title">
+     <string>OSG</string>
+    </property>
+    <addaction name="actionClearScene"/>
+    <addaction name="separator"/>
+    <addaction name="actionKamera_1"/>
+    <addaction name="actionKamera_2"/>
+    <addaction name="actionKamera_3"/>
+    <addaction name="actionKamera_4"/>
+    <addaction name="actionKamera_11"/>
+    <addaction name="separator"/>
+    <addaction name="actionKamera_5"/>
+    <addaction name="actionKamera_6"/>
+    <addaction name="actionKamera_7"/>
+    <addaction name="actionKamera_8"/>
+    <addaction name="actionKamera_9"/>
+    <addaction name="actionKamera_10"/>
+   </widget>
+   <widget class="QMenu" name="menuP_klady">
+    <property name="title">
+     <string>Příklady</string>
+    </property>
+    <widget class="QMenu" name="menuAsteroid_gaps">
+     <property name="title">
+      <string>Asteroid - problémy s přesností textur</string>
+     </property>
+     <addaction name="actionAsteroid_HighlightGaps_Blender"/>
+     <addaction name="actionAsteroid_Sewing"/>
+     <addaction name="actionAsteroid_HighlightGaps_MeshMapper"/>
+     <addaction name="separator"/>
+     <addaction name="actionAsteroid_UVGapsCorrection_Blender"/>
+     <addaction name="actionAsteroid_UVGapsCorrection_MeshMapper"/>
+     <addaction name="separator"/>
+     <addaction name="actionAsteroid_UVGapsManualCorrection"/>
+    </widget>
+    <widget class="QMenu" name="menuAsteroid_Normal_Mapping">
+     <property name="title">
+      <string>Asteroid - Normal Mapping</string>
+     </property>
+     <addaction name="actionAsteroid_Normal_Mapping_2"/>
+     <addaction name="actionAsteroid_Normal_Mapping_Error"/>
+    </widget>
+    <widget class="QMenu" name="menuAsteroid_Level_of_Detail">
+     <property name="title">
+      <string>Asteroid - Level of Detail</string>
+     </property>
+     <addaction name="actionAsteroid_DynamicTessellation_16"/>
+     <addaction name="actionAsteroid_DynamicTessellation_64"/>
+     <addaction name="actionAsteroid_DynamicTessellation_64_with_LOD"/>
+     <addaction name="actionAsteroid_DynamicTessellation_16_with_LOD"/>
+     <addaction name="actionAsteroid_Displacement_LOD"/>
+     <addaction name="actionAsteroid_DynamicTessellation_16_with_LOD_cust_range"/>
+     <addaction name="actionAsteroid_DynamicTessellation_64_with_LOD_cust_range"/>
+     <addaction name="separator"/>
+     <addaction name="actionAsteroid_LOD_no_tessellation"/>
+     <addaction name="actionAsteroid_LOD_no_tessellation_custom_range"/>
+    </widget>
+    <widget class="QMenu" name="menuDlazdena_plocha">
+     <property name="title">
+      <string>Dlazdena plocha</string>
+     </property>
+     <addaction name="actionCobblestone_multipart"/>
+     <addaction name="actionCobblestone_singlepart"/>
+     <addaction name="separator"/>
+     <addaction name="actionCobblestone_singlepart_modified_gaps"/>
+     <addaction name="actionCobblestone_multipart_modified_gaps"/>
+     <addaction name="separator"/>
+     <addaction name="actionSimpleDisplacement_v2_normalMapping_v2"/>
+    </widget>
+    <widget class="QMenu" name="menuM_dy_tesel_toru">
+     <property name="title">
+      <string>Módy teselátoru a doskoky</string>
+     </property>
+     <addaction name="actionCobblestone_equal_spacing"/>
+     <addaction name="actionCobblestone_fractional_odd_spacing"/>
+     <addaction name="actionCobblestone_fractional_even_spacing"/>
+     <addaction name="separator"/>
+     <addaction name="actionCobblestone_equal_spacing_wireframe"/>
+     <addaction name="actionCobblestone_fractional_odd_spacing_wireframe"/>
+     <addaction name="actionCobblestone_fractional_even_spacing_wireframe"/>
+     <addaction name="separator"/>
+     <addaction name="actionCobblestone_power_of_two"/>
+     <addaction name="separator"/>
+    </widget>
+    <widget class="QMenu" name="menuDodate_n_p_klady">
+     <property name="title">
+      <string>Dodatečné příklady</string>
+     </property>
+     <addaction name="actionTriangle"/>
+     <addaction name="actionTriangle_dynamic"/>
+     <addaction name="actionTriangle_dynamic_regular"/>
+     <addaction name="separator"/>
+     <addaction name="actionQuads"/>
+     <addaction name="actionQuads_dynamic"/>
+    </widget>
+    <widget class="QMenu" name="menuTesty_v_konu">
+     <property name="title">
+      <string>Testy výkonu</string>
+     </property>
+     <addaction name="actionPerf_DynamicTessellation_shader"/>
+     <addaction name="actionPerf_DynamicTessellation_callback"/>
+     <addaction name="actionPerf_DynamicTessellation_fixed"/>
+     <addaction name="actionPerf_DynamicTessellation_Cobblestone_Combined"/>
+     <addaction name="actionPerf_DynamicTessellation_Cobblestone_Shader"/>
+     <addaction name="actionPerf_DynamicTessellation_Cobblestone_Shader_Modified"/>
+     <addaction name="separator"/>
+     <addaction name="actionDisplacement_mapping"/>
+     <addaction name="actionOriginalModel"/>
+    </widget>
+    <addaction name="actionExampleTeselace"/>
+    <addaction name="actionPromenlivaTeselace"/>
+    <addaction name="menuDlazdena_plocha"/>
+    <addaction name="actionParallax_mapping"/>
+    <addaction name="_actionSimpleDisplacement_v2_normalMapping_v2"/>
+    <addaction name="actionAsteroid"/>
+    <addaction name="menuAsteroid_Level_of_Detail"/>
+    <addaction name="menuAsteroid_Normal_Mapping"/>
+    <addaction name="menuAsteroid_gaps"/>
+    <addaction name="actionAsteroid_V2"/>
+    <addaction name="actionAsteroid_LOD"/>
+    <addaction name="separator"/>
+    <addaction name="actionLargeSceneWithSkybox"/>
+    <addaction name="separator"/>
+    <addaction name="actionOptimalizovat_dema"/>
+    <addaction name="menuM_dy_tesel_toru"/>
+    <addaction name="menuDodate_n_p_klady"/>
+    <addaction name="menuTesty_v_konu"/>
+   </widget>
+   <widget class="QMenu" name="menuZobrazit">
+    <property name="title">
+     <string>Zobrazit</string>
+    </property>
+    <addaction name="actionShowSceneTree"/>
+    <addaction name="actionPerfCounters"/>
+    <addaction name="actionUniforms"/>
+    <addaction name="actionAttributes"/>
+    <addaction name="actionStateSets"/>
+    <addaction name="actionTextOutput"/>
+    <addaction name="actionFloatGLWidget"/>
+   </widget>
+   <addaction name="menuSoubor"/>
+   <addaction name="menuOSG"/>
+   <addaction name="menuP_klady"/>
+   <addaction name="menuZobrazit"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <widget class="QDockWidget" name="dockWidget_SceneGraph">
+   <property name="windowTitle">
+    <string>Strom scény</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>1</number>
+   </attribute>
+   <widget class="QWidget" name="dockWidgetContents_3">
+    <layout class="QVBoxLayout" name="verticalLayout_3">
+     <property name="spacing">
+      <number>0</number>
+     </property>
+     <property name="margin">
+      <number>0</number>
+     </property>
+     <item>
+      <layout class="QGridLayout" name="gridLayout_8">
+       <property name="spacing">
+        <number>0</number>
+       </property>
+       <item row="0" column="1">
+        <widget class="QPushButton" name="treeWidgetDelete">
+         <property name="text">
+          <string>Smazat</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0">
+        <widget class="QPushButton" name="treeWidgetAddNode">
+         <property name="text">
+          <string>Nový uzel</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="3">
+        <widget class="QPushButton" name="treeWidgetSetStateset">
+         <property name="text">
+          <string>Přiřadit Aktivní StateSet</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="2">
+        <widget class="QPushButton" name="treeWidgetCopy">
+         <property name="text">
+          <string>Kopírovat [link]</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <widget class="SceneGraphWidget" name="sceneTreeWidget">
+       <property name="dragEnabled">
+        <bool>true</bool>
+       </property>
+       <property name="dragDropMode">
+        <enum>QAbstractItemView::InternalMove</enum>
+       </property>
+       <property name="defaultDropAction">
+        <enum>Qt::MoveAction</enum>
+       </property>
+       <property name="itemsExpandable">
+        <bool>true</bool>
+       </property>
+       <property name="columnCount">
+        <number>4</number>
+       </property>
+       <attribute name="headerVisible">
+        <bool>true</bool>
+       </attribute>
+       <attribute name="headerDefaultSectionSize">
+        <number>150</number>
+       </attribute>
+       <attribute name="headerStretchLastSection">
+        <bool>false</bool>
+       </attribute>
+       <column>
+        <property name="text">
+         <string notr="true">Název uzlu</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Typ uzlu</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>StateSet</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string/>
+        </property>
+       </column>
+      </widget>
+     </item>
+     <item>
+      <widget class="QCheckBox" name="treeWidgetHighlightCurrentNode">
+       <property name="text">
+        <string>Zvýrazňovat vybraný box</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QDockWidget" name="dockWidget_GPUPerfAPI">
+   <property name="windowTitle">
+    <string>Perf counters</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>1</number>
+   </attribute>
+   <widget class="QWidget" name="dockWidgetContents_4">
+    <layout class="QGridLayout" name="gridLayout_9">
+     <property name="margin">
+      <number>0</number>
+     </property>
+     <item row="2" column="1">
+      <widget class="QPushButton" name="perfCounters_MassAnalyze">
+       <property name="text">
+        <string>Hromadné měření</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0">
+      <widget class="QPushButton" name="perfCounters_Analyze">
+       <property name="text">
+        <string>Odečíst hodnoty čítačů</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="0" colspan="2">
+      <widget class="QTableWidget" name="GPA_counter_list">
+       <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
+        <bool>false</bool>
+       </attribute>
+       <attribute name="horizontalHeaderStretchLastSection">
+        <bool>true</bool>
+       </attribute>
+       <attribute name="verticalHeaderDefaultSectionSize">
+        <number>24</number>
+       </attribute>
+      </widget>
+     </item>
+     <item row="1" column="0" colspan="2">
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <property name="topMargin">
+        <number>3</number>
+       </property>
+       <property name="bottomMargin">
+        <number>3</number>
+       </property>
+       <item>
+        <widget class="QPushButton" name="perfApi_TimedAnalysis">
+         <property name="text">
+          <string>Obnovovat s intervalem [s]</string>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QDoubleSpinBox" name="timerInterval">
+         <property name="minimum">
+          <double>0.250000000000000</double>
+         </property>
+         <property name="singleStep">
+          <double>0.250000000000000</double>
+         </property>
+         <property name="value">
+          <double>2.000000000000000</double>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QDockWidget" name="dockWidget_Console">
+   <property name="allowedAreas">
+    <set>Qt::BottomDockWidgetArea|Qt::TopDockWidgetArea</set>
+   </property>
+   <property name="windowTitle">
+    <string>Výstup</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>8</number>
+   </attribute>
+   <widget class="QWidget" name="dockWidgetContents_9">
+    <layout class="QGridLayout" name="gridLayout_10">
+     <property name="leftMargin">
+      <number>2</number>
+     </property>
+     <property name="topMargin">
+      <number>0</number>
+     </property>
+     <property name="rightMargin">
+      <number>2</number>
+     </property>
+     <property name="bottomMargin">
+      <number>0</number>
+     </property>
+     <item row="0" column="0">
+      <widget class="QTextEdit" name="textEdit_Console">
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QDockWidget" name="dockWidget_Uniforms">
+   <property name="features">
+    <set>QDockWidget::AllDockWidgetFeatures</set>
+   </property>
+   <property name="windowTitle">
+    <string>Uniforms</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>1</number>
+   </attribute>
+   <widget class="QWidget" name="dockWidgetContents_5">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="baseSize">
+     <size>
+      <width>0</width>
+      <height>0</height>
+     </size>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout_2">
+     <property name="spacing">
+      <number>0</number>
+     </property>
+     <property name="margin">
+      <number>0</number>
+     </property>
+     <item>
+      <layout class="QGridLayout" name="gridLayout_11">
+       <item row="1" column="0">
+        <widget class="QPushButton" name="button_dockWidgetUniform_add">
+         <property name="text">
+          <string>Přidat uniform</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QPushButton" name="button_dockWidgetUniform_remove">
+         <property name="text">
+          <string>Odstranit uniform</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0">
+        <widget class="QLabel" name="label_11">
+         <property name="text">
+          <string>Aktivní State</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QLabel" name="uniformsTableWidget_activeState">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <widget class="QTableWidget" name="uniformsTableWidget">
+       <property name="baseSize">
+        <size>
+         <width>0</width>
+         <height>50</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QDockWidget" name="dockWidget_Attributes">
+   <property name="windowTitle">
+    <string>StateAttributes</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>1</number>
+   </attribute>
+   <widget class="QWidget" name="dockWidgetContents">
+    <layout class="QVBoxLayout" name="verticalLayout_5">
+     <property name="spacing">
+      <number>0</number>
+     </property>
+     <property name="margin">
+      <number>0</number>
+     </property>
+     <item>
+      <layout class="QGridLayout" name="gridLayout_12">
+       <item row="1" column="0">
+        <widget class="QPushButton" name="attributesTableWidget_Add">
+         <property name="text">
+          <string>Přidat atribut</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QPushButton" name="attributesTableWidget_Remove">
+         <property name="text">
+          <string>Smazat atribut</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0">
+        <widget class="QLabel" name="label_10">
+         <property name="text">
+          <string>Aktivní State</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QLabel" name="attributesTableWidget_currentState">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <widget class="QTableWidget" name="attributesTableWidget">
+       <property name="columnCount">
+        <number>1</number>
+       </property>
+       <column>
+        <property name="text">
+         <string>Typ</string>
+        </property>
+       </column>
+      </widget>
+     </item>
+     <item>
+      <widget class="QStackedWidget" name="attributesStackedWidget">
+       <property name="currentIndex">
+        <number>1</number>
+       </property>
+       <widget class="QWidget" name="empty"/>
+       <widget class="QWidget" name="Texture">
+        <layout class="QGridLayout" name="gridLayout_15">
+         <item row="0" column="1">
+          <widget class="QPushButton" name="SA_Texture_LoadFromFile">
+           <property name="text">
+            <string>Načíst texturu ze souboru</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="0">
+          <widget class="QLabel" name="label_3">
+           <property name="text">
+            <string>Textura</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="1">
+          <widget class="QComboBox" name="SA_Texture_ListOfTextures"/>
+         </item>
+         <item row="6" column="0">
+          <widget class="QLabel" name="label_6">
+           <property name="text">
+            <string>MagFilter</string>
+           </property>
+          </widget>
+         </item>
+         <item row="9" column="0" colspan="2">
+          <widget class="QLabel" name="SA_Texture_Preview">
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item row="7" column="0">
+          <widget class="QLabel" name="label_7">
+           <property name="text">
+            <string>Wrap_S</string>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="0">
+          <widget class="QLabel" name="label_5">
+           <property name="text">
+            <string>MinFilter</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="label_4">
+           <property name="text">
+            <string>Tex. jednotka</string>
+           </property>
+          </widget>
+         </item>
+         <item row="8" column="0">
+          <widget class="QLabel" name="label_8">
+           <property name="text">
+            <string>Wrap_T</string>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="1">
+          <widget class="QComboBox" name="SA_Texture_MinFilter"/>
+         </item>
+         <item row="6" column="1">
+          <widget class="QComboBox" name="SA_Texture_MagFilter"/>
+         </item>
+         <item row="7" column="1">
+          <widget class="QComboBox" name="SA_Texture_WrapS"/>
+         </item>
+         <item row="8" column="1">
+          <widget class="QComboBox" name="SA_Texture_WrapT"/>
+         </item>
+         <item row="2" column="1">
+          <widget class="QLabel" name="SA_Texture_TexUnit">
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="CullFace">
+        <layout class="QFormLayout" name="formLayout_2">
+         <item row="0" column="0">
+          <widget class="QLabel" name="label_9">
+           <property name="text">
+            <string>CullFace Mode</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QComboBox" name="SA_CullFace_Mode"/>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="PolygonMode">
+        <layout class="QFormLayout" name="formLayout">
+         <item row="0" column="0">
+          <widget class="QLabel" name="label">
+           <property name="text">
+            <string>Face</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="label_2">
+           <property name="text">
+            <string>Mode</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QComboBox" name="SA_PolygonMode_Face">
+           <item>
+            <property name="text">
+             <string>FRONT_AND_BACK</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>FRONT</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>BACK</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QComboBox" name="SA_PolygonMode_Mode">
+           <item>
+            <property name="text">
+             <string>FILL</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>LINE</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>POINT</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="PolygonOffset"/>
+       <widget class="QWidget" name="Program">
+        <layout class="QGridLayout" name="gridLayout_16">
+         <item row="0" column="0">
+          <widget class="QPushButton" name="SA_Program_UseCurrentProgram">
+           <property name="text">
+            <string>Použít aktuální program</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <spacer name="verticalSpacer_2">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="Material"/>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QDockWidget" name="dockWidget_StateSets">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="windowTitle">
+    <string>StateSets</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>1</number>
+   </attribute>
+   <widget class="QWidget" name="dockWidgetContents_2">
+    <layout class="QVBoxLayout" name="verticalLayout_4">
+     <property name="spacing">
+      <number>0</number>
+     </property>
+     <property name="margin">
+      <number>0</number>
+     </property>
+     <item>
+      <layout class="QGridLayout" name="gridLayout_13">
+       <item row="0" column="0">
+        <widget class="QPushButton" name="stateSetTableWidget_Add">
+         <property name="text">
+          <string>Vytvořit StateSet</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QPushButton" name="stateSetTableWidget_Remove">
+         <property name="text">
+          <string>Smazat StateSet</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <widget class="QTableWidget" name="stateSetTableWidget">
+       <attribute name="horizontalHeaderStretchLastSection">
+        <bool>true</bool>
+       </attribute>
+       <attribute name="verticalHeaderStretchLastSection">
+        <bool>false</bool>
+       </attribute>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <action name="actionUseTessellationShader">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>UseTessellationShader</string>
+   </property>
+  </action>
+  <action name="actionUseGeometryShader">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>UseGeometryShader</string>
+   </property>
+  </action>
+  <action name="actionPerformanceSnapshot">
+   <property name="text">
+    <string>Analyzovat pipeline</string>
+   </property>
+   <property name="shortcut">
+    <string>F5</string>
+   </property>
+  </action>
+  <action name="actionNastaveni">
+   <property name="text">
+    <string>Nastavení</string>
+   </property>
+  </action>
+  <action name="actionReinicializovat">
+   <property name="text">
+    <string>Reinicializovat</string>
+   </property>
+  </action>
+  <action name="actionNacist_vertex">
+   <property name="text">
+    <string>Načíst vertex</string>
+   </property>
+  </action>
+  <action name="actionNacist_fragment">
+   <property name="text">
+    <string>Načíst fragment</string>
+   </property>
+  </action>
+  <action name="actionNacist_geometry">
+   <property name="text">
+    <string>Načíst geometry</string>
+   </property>
+   <property name="visible">
+    <bool>false</bool>
+   </property>
+  </action>
+  <action name="actionNacist_tess_control">
+   <property name="text">
+    <string>Načíst tess. control</string>
+   </property>
+  </action>
+  <action name="actionNacist_tess_evaluation">
+   <property name="text">
+    <string>Načíst tess. evaluation</string>
+   </property>
+  </action>
+  <action name="actionUlozit_vertex">
+   <property name="text">
+    <string>Uložit vertex</string>
+   </property>
+  </action>
+  <action name="actionUlozit_fragment">
+   <property name="text">
+    <string>Uložit fragment</string>
+   </property>
+  </action>
+  <action name="actionUlozit_geometry">
+   <property name="text">
+    <string>Uložit geometry</string>
+   </property>
+  </action>
+  <action name="actionUlozt_tess_control">
+   <property name="text">
+    <string>Uložit tess. control</string>
+   </property>
+  </action>
+  <action name="actionUlozit_tess_evaluation">
+   <property name="text">
+    <string>Uložit tess. evaluation</string>
+   </property>
+  </action>
+  <action name="actionLoadObject">
+   <property name="text">
+    <string>Načíst objekt</string>
+   </property>
+  </action>
+  <action name="actionCompileShader">
+   <property name="text">
+    <string>Přeložit shadery</string>
+   </property>
+  </action>
+  <action name="actionExampleTeselace">
+   <property name="text">
+    <string>Teselace</string>
+   </property>
+   <property name="toolTip">
+    <string>Načte předpřipravený příklad s teselací</string>
+   </property>
+  </action>
+  <action name="actionZobrazit_strom_sceny">
+   <property name="text">
+    <string>Zobrazit strom scény</string>
+   </property>
+  </action>
+  <action name="actionZobrazit_zatizeni">
+   <property name="text">
+    <string>Zobrazit zatížení</string>
+   </property>
+  </action>
+  <action name="actionZobrazit_textov_vystup">
+   <property name="text">
+    <string>Zobrazit textový výstup</string>
+   </property>
+  </action>
+  <action name="actionSimpleDisplacement">
+   <property name="text">
+    <string>Ukázka základního displacementu</string>
+   </property>
+  </action>
+  <action name="actionShowSceneTree">
+   <property name="text">
+    <string>Strom scény</string>
+   </property>
+  </action>
+  <action name="actionPerfCounters">
+   <property name="text">
+    <string>PerfCounters</string>
+   </property>
+  </action>
+  <action name="actionUniforms">
+   <property name="text">
+    <string>Uniforms</string>
+   </property>
+  </action>
+  <action name="actionAttributes">
+   <property name="text">
+    <string>Attributes</string>
+   </property>
+  </action>
+  <action name="actionStateSets">
+   <property name="text">
+    <string>StateSets</string>
+   </property>
+  </action>
+  <action name="actionTextOutput">
+   <property name="text">
+    <string>Textový výstup</string>
+   </property>
+  </action>
+  <action name="actionTest_SceneTreeWidgetu">
+   <property name="text">
+    <string>Test SceneTreeWidgetu</string>
+   </property>
+  </action>
+  <action name="actionPromenlivaTeselace">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Proměnlivá teselace</string>
+   </property>
+   <property name="visible">
+    <bool>false</bool>
+   </property>
+  </action>
+  <action name="actionClearScene">
+   <property name="text">
+    <string>Vymazat celou scénu</string>
+   </property>
+  </action>
+  <action name="actionUlozitAktivniStrom">
+   <property name="text">
+    <string>Uložit aktivní strom</string>
+   </property>
+  </action>
+  <action name="actionNacistStrom">
+   <property name="text">
+    <string>Načíst strom</string>
+   </property>
+  </action>
+  <action name="actionSimpleDisplacement_v2">
+   <property name="text">
+    <string>Jednoduchý displacement</string>
+   </property>
+  </action>
+  <action name="actionSimpleDisplacement_v2_difTes">
+   <property name="text">
+    <string>Jednoduchý displacement - jiná teselace</string>
+   </property>
+  </action>
+  <action name="actionSimpleDisplacement_v2_normalMapping">
+   <property name="text">
+    <string>Jednoduchý displacement + Normal mapping</string>
+   </property>
+  </action>
+  <action name="actionP_idat_objekt">
+   <property name="text">
+    <string>Přidat objekt</string>
+   </property>
+  </action>
+  <action name="actionImportObject">
+   <property name="text">
+    <string>Importovat objekt</string>
+   </property>
+  </action>
+  <action name="actionSaveObject">
+   <property name="text">
+    <string>Uložit objekt</string>
+   </property>
+  </action>
+  <action name="actionSaveScene">
+   <property name="text">
+    <string>Uložit scénu</string>
+   </property>
+  </action>
+  <action name="actionLoadScene">
+   <property name="text">
+    <string>Načíst scénu</string>
+   </property>
+  </action>
+  <action name="_actionSimpleDisplacement_v2_normalMapping_v2">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Simple Displacement - dlazdena plocha</string>
+   </property>
+   <property name="visible">
+    <bool>false</bool>
+   </property>
+  </action>
+  <action name="actionFloatGLWidget">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>3D plochu samostatně</string>
+   </property>
+  </action>
+  <action name="actionClearAll">
+   <property name="text">
+    <string>Smazat vše</string>
+   </property>
+  </action>
+  <action name="actionParallax_mapping">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Parallax mapping</string>
+   </property>
+   <property name="visible">
+    <bool>false</bool>
+   </property>
+  </action>
+  <action name="actionAsteroid">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Asteroid</string>
+   </property>
+   <property name="visible">
+    <bool>false</bool>
+   </property>
+  </action>
+  <action name="actionKamera_1">
+   <property name="text">
+    <string>Kamera [0.0, 0.0, 5.0]</string>
+   </property>
+  </action>
+  <action name="actionKamera_2">
+   <property name="text">
+    <string>Kamera [0.0, 5.0, 5.0]</string>
+   </property>
+  </action>
+  <action name="actionKamera_3">
+   <property name="text">
+    <string>Kamera [0.0, 5.0, 0.0]</string>
+   </property>
+  </action>
+  <action name="actionKamera_4">
+   <property name="text">
+    <string>Kamera [5.0, 0.0, 0.0]</string>
+   </property>
+  </action>
+  <action name="actionAsteroid_V2">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Asteroid V2</string>
+   </property>
+   <property name="visible">
+    <bool>false</bool>
+   </property>
+  </action>
+  <action name="actionMovingLight">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Pohyb světla s kamerou</string>
+   </property>
+  </action>
+  <action name="actionAsteroid_DynamicTessellation_16">
+   <property name="text">
+    <string>Asteroid - dynamická změna teselace - stupeň 16</string>
+   </property>
+  </action>
+  <action name="actionAsteroid_Normal_Mapping_Error">
+   <property name="text">
+    <string>Ukázka chyby mapy</string>
+   </property>
+  </action>
+  <action name="actionAsteroid_Normal_Mapping_2">
+   <property name="text">
+    <string>Asteroid - Normal Mapping</string>
+   </property>
+  </action>
+  <action name="actionAsteroid_LOD">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Asteroid LOD</string>
+   </property>
+   <property name="visible">
+    <bool>false</bool>
+   </property>
+  </action>
+  <action name="actionOptimalizovat_dema">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Optimalizovat dema pomocí osg Optimizer</string>
+   </property>
+  </action>
+  <action name="actionLoadObjectOptimalizer">
+   <property name="text">
+    <string>Načíst objekt s využitím Optimalizeru</string>
+   </property>
+  </action>
+  <action name="actionLargeSceneWithSkybox">
+   <property name="text">
+    <string>Vetsi scena se skyboxem</string>
+   </property>
+  </action>
+  <action name="actionAsteroid_HighlightGaps_Blender">
+   <property name="text">
+    <string>Ukázka mezer - Blender</string>
+   </property>
+  </action>
+  <action name="actionAsteroid_Sewing">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>&quot;Sešívání&quot; v shaderu</string>
+   </property>
+   <property name="visible">
+    <bool>false</bool>
+   </property>
+  </action>
+  <action name="actionAsteroid_UVGapsCorrection_Blender">
+   <property name="text">
+    <string>Korekce UV mapy - Blender</string>
+   </property>
+  </action>
+  <action name="actionAsteroid_UVGapsManualCorrection">
+   <property name="text">
+    <string>Korekce UV mapy a displacement textury</string>
+   </property>
+  </action>
+  <action name="actionAsteroid_Displacement_LOD">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Asteroid - Displacement LOD</string>
+   </property>
+   <property name="visible">
+    <bool>false</bool>
+   </property>
+  </action>
+  <action name="actionAsteroid_DynamicTessellation_64">
+   <property name="text">
+    <string>Asteroid - dynamická změna teselace - stupeň 64</string>
+   </property>
+  </action>
+  <action name="actionAsteroid_DynamicTessellation_64_with_LOD">
+   <property name="text">
+    <string>Asteroid - dynamická změna teselace (64) + běžný LOD</string>
+   </property>
+  </action>
+  <action name="actionAsteroid_DynamicTessellation_16_with_LOD">
+   <property name="text">
+    <string>Asteroid - dynamická změna teselace (16) + běžný LOD</string>
+   </property>
+  </action>
+  <action name="actionAsteroid_DynamicTessellation_16_with_LOD_cust_range">
+   <property name="text">
+    <string>Asteroid - dynamická změna teselace (16) + běžný LOD - vlastní hranice</string>
+   </property>
+  </action>
+  <action name="actionAsteroid_DynamicTessellation_64_with_LOD_cust_range">
+   <property name="text">
+    <string>Asteroid - dynamická změna teselace (64) + běžný LOD - vlastní hranice</string>
+   </property>
+  </action>
+  <action name="actionAsteroid_LOD_no_tessellation">
+   <property name="text">
+    <string>Asteroid - LOD bez teselace</string>
+   </property>
+  </action>
+  <action name="actionAsteroid_LOD_no_tessellation_custom_range">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Asteroid - LOD bez teselace - vlastní hranice</string>
+   </property>
+   <property name="visible">
+    <bool>false</bool>
+   </property>
+  </action>
+  <action name="actionCobblestone_multipart">
+   <property name="text">
+    <string>Vicedilna plocha</string>
+   </property>
+  </action>
+  <action name="actionSimpleDisplacement_v2_normalMapping_v2">
+   <property name="text">
+    <string>Jeden dil - old</string>
+   </property>
+  </action>
+  <action name="actionCobblestone_singlepart">
+   <property name="text">
+    <string>Jeden dil</string>
+   </property>
+  </action>
+  <action name="actionCobblestone_singlepart_modified_gaps">
+   <property name="text">
+    <string>Jeden díl - upravená návaznost</string>
+   </property>
+  </action>
+  <action name="actionCobblestone_multipart_modified_gaps">
+   <property name="text">
+    <string>Vícedílná plocha - upravená návaznost</string>
+   </property>
+  </action>
+  <action name="actionCobblestone_equal_spacing">
+   <property name="text">
+    <string>equal_spacing</string>
+   </property>
+  </action>
+  <action name="actionCobblestone_fractional_odd_spacing">
+   <property name="text">
+    <string>fractional_odd_spacing</string>
+   </property>
+  </action>
+  <action name="actionCobblestone_fractional_even_spacing">
+   <property name="text">
+    <string>fractional_even_spacing</string>
+   </property>
+  </action>
+  <action name="actionCobblestone_equal_spacing_wireframe">
+   <property name="text">
+    <string>equal_spacing - wireframe</string>
+   </property>
+  </action>
+  <action name="actionCobblestone_fractional_odd_spacing_wireframe">
+   <property name="text">
+    <string>fractional_odd_spacing - wireframe</string>
+   </property>
+  </action>
+  <action name="actionCobblestone_fractional_even_spacing_wireframe">
+   <property name="text">
+    <string>fractional_even_spacing - wireframe</string>
+   </property>
+  </action>
+  <action name="actionCobblestone_power_of_two">
+   <property name="text">
+    <string>Upraveny vypocet dynamickeho vypoctu koeficientu</string>
+   </property>
+  </action>
+  <action name="actionTriangle">
+   <property name="text">
+    <string>Trojúhelník</string>
+   </property>
+  </action>
+  <action name="actionTriangle_dynamic">
+   <property name="text">
+    <string>Trojúhelník - dynamický jednoduchý</string>
+   </property>
+  </action>
+  <action name="actionTroj_heln_k_dynamick_outer">
+   <property name="text">
+    <string>Trojúhelník - dynamický outer</string>
+   </property>
+  </action>
+  <action name="actionTroj_heln_k_dynamick_celkov">
+   <property name="text">
+    <string>Trojúhelník - dynamický celkový</string>
+   </property>
+  </action>
+  <action name="actionTriangle_dynamic_regular">
+   <property name="text">
+    <string>Trojúhelník - dynamický skokový</string>
+   </property>
+  </action>
+  <action name="actionQuads">
+   <property name="text">
+    <string>Čtyřúhelník</string>
+   </property>
+  </action>
+  <action name="actionQuads_dynamic">
+   <property name="text">
+    <string>Čtyřúhelník - dynamický</string>
+   </property>
+  </action>
+  <action name="actionAsteroid_UVGapsCorrection_MeshMapper">
+   <property name="text">
+    <string>Korekce UV mapy - MeshMapper</string>
+   </property>
+  </action>
+  <action name="actionAsteroid_HighlightGaps_MeshMapper">
+   <property name="text">
+    <string>Ukázka mezer - MeshMapper</string>
+   </property>
+  </action>
+  <action name="actionKamera_5">
+   <property name="text">
+    <string>Kamera [10.0, 0.0, 0.0]</string>
+   </property>
+  </action>
+  <action name="actionKamera_6">
+   <property name="text">
+    <string>Kamera [15.0, 0.0, 0.0]</string>
+   </property>
+  </action>
+  <action name="actionKamera_7">
+   <property name="text">
+    <string>Kamera [20.0, 0.0, 0.0]</string>
+   </property>
+  </action>
+  <action name="actionKamera_8">
+   <property name="text">
+    <string>Kamera [30.0, 0.0, 0.0]</string>
+   </property>
+  </action>
+  <action name="actionKamera_9">
+   <property name="text">
+    <string>Kamera [40.0, 0.0, 0.0]</string>
+   </property>
+  </action>
+  <action name="actionKamera_10">
+   <property name="text">
+    <string>Kamera [50.0, 0.0, 0.0]</string>
+   </property>
+  </action>
+  <action name="actionPerf_DynamicTessellation_shader">
+   <property name="text">
+    <string>Dynamická teselace - shader</string>
+   </property>
+  </action>
+  <action name="actionPerf_DynamicTessellation_callback">
+   <property name="text">
+    <string>Dynamická teselace - node</string>
+   </property>
+  </action>
+  <action name="actionPerf_DynamicTessellation_fixed">
+   <property name="text">
+    <string>Fixní teselace</string>
+   </property>
+  </action>
+  <action name="actionDisplacement_mapping">
+   <property name="text">
+    <string>Redukovaný model s displacement mappingem</string>
+   </property>
+  </action>
+  <action name="actionOriginalModel">
+   <property name="text">
+    <string>Původní model</string>
+   </property>
+  </action>
+  <action name="actionPerf_DynamicTessellation_Cobblestone_Combined">
+   <property name="text">
+    <string>Kombinovaný výpočet teselace - dlažba</string>
+   </property>
+  </action>
+  <action name="actionPerf_DynamicTessellation_Cobblestone_Shader">
+   <property name="text">
+    <string>Dynamická teselace - dlažba</string>
+   </property>
+  </action>
+  <action name="actionPerf_DynamicTessellation_Cobblestone_Shader_Modified">
+   <property name="text">
+    <string>Dynamická teselace - dlažba - druhá varianta</string>
+   </property>
+  </action>
+  <action name="actionKamera_11">
+   <property name="text">
+    <string>Kamera [0.0, 10.0, 10.0]</string>
+   </property>
+  </action>
+  <zorder>dockWidget_Attributes</zorder>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>display_viewer</class>
+   <extends>QWidget</extends>
+   <header>display_viewer.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>SceneGraphWidget</class>
+   <extends>QTreeWidget</extends>
+   <header>SceneGraphWidget.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="shader_editor.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>actionShowSceneTree</sender>
+   <signal>triggered()</signal>
+   <receiver>dockWidget_SceneGraph</receiver>
+   <slot>show()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>127</x>
+     <y>105</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionPerfCounters</sender>
+   <signal>triggered()</signal>
+   <receiver>dockWidget_GPUPerfAPI</receiver>
+   <slot>show()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>127</x>
+     <y>218</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionUniforms</sender>
+   <signal>triggered()</signal>
+   <receiver>dockWidget_Uniforms</receiver>
+   <slot>show()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>127</x>
+     <y>327</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionStateSets</sender>
+   <signal>triggered()</signal>
+   <receiver>dockWidget_StateSets</receiver>
+   <slot>show()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>127</x>
+     <y>572</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionTextOutput</sender>
+   <signal>triggered()</signal>
+   <receiver>dockWidget_Console</receiver>
+   <slot>show()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>438</x>
+     <y>682</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionAttributes</sender>
+   <signal>triggered()</signal>
+   <receiver>dockWidget_Attributes</receiver>
+   <slot>show()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>127</x>
+     <y>450</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
